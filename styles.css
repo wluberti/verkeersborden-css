@@ -1,0 +1,32 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Size afmetingen gelden voor de buitenkant */
+}
+
+html {
+    font-size: 62.5%; /* 62.5% van 1rem (16px) = 10px */
+}
+
+body {
+    background: #F3F1F5;
+    min-height: 100vh; /* minimale hoogte 100% van de heigth */
+    padding: 4rem;
+}
+
+.card {
+    height: 30rem;
+    width: 30rem;
+    background: #F3F1F5;
+    box-shadow: 0 0.3rem 3rem rgba(0, 0, 0, 0.2);
+    list-style: none;
+    margin-bottom: 4rem;
+    margin-right: 4rem;
+}
+
+.u-flexbox-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* horizontaal centreren */
+    align-items: center; /* verticaal centreren */
+}
