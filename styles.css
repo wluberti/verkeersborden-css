@@ -14,6 +14,13 @@ body {
     padding: 4rem;
 }
 
+.u-flexbox-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* horizontaal centreren */
+    align-items: center; /* verticaal centreren */
+}
+
 .card {
     height: 30rem;
     width: 30rem;
@@ -22,11 +29,18 @@ body {
     list-style: none;
     margin-bottom: 4rem;
     margin-right: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.u-flexbox-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* horizontaal centreren */
-    align-items: center; /* verticaal centreren */
+.card__figure {
+    width: 60%;
+    height: 60%;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2.5rem #C50003,
+                0 0 0 3.0rem white,
+                0 0 0 3.5rem #C50003;
 }
+
