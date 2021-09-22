@@ -12,6 +12,8 @@ body {
     background: #F3F1F5;
     min-height: 100vh; /* minimale hoogte 100% van de heigth */
     padding: 4rem;
+    font-size: 1.6rem;
+    font-family: 'Didact Gothic', sans-serif;
 }
 
 .u-flexbox-wrapper {
@@ -24,23 +26,80 @@ body {
 .card {
     height: 30rem;
     width: 30rem;
-    background: #F3F1F5;
+    background: #f3f1f5;
     box-shadow: 0 0.3rem 3rem rgba(0, 0, 0, 0.2);
     list-style: none;
     margin-bottom: 4rem;
     margin-right: 4rem;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* horizontaal centreren */
+    align-items: center; /* verticaal centreren */
 }
 
 .card__figure {
+    display: flex;
+    justify-content: center; /* horizontaal centreren */
+    align-items: center; /* verticaal centreren */
+}
+
+.card__heading {
+    font-size: 600%;
+}
+
+.card__figure--type-je-mag-hier-niet {
     width: 60%;
     height: 60%;
     background: white;
     border-radius: 50%;
-    box-shadow: 0 0 0 2.5rem #C50003,
+    box-shadow: 0 0 0 2.5rem #c50003,
                 0 0 0 3.0rem white,
-                0 0 0 3.5rem #C50003;
+                0 0 0 3.5rem #c50003;
+}
+
+.aanhanger__container {
+    height: 100%;
+    width: 100%;
+    position: relative; /* Nodig om niet bij 'absolute' de body te pakken */
+}
+
+.aanhanger__bak {
+    width: 50%;
+    height: 30%;
+    background: black;
+    position: absolute; /* Zie notitie bij 'aanhanger__container:position' */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.aanhanger__wiel {
+    width: 15%;
+    height: 15%;
+    background: black;
+    border-radius: 50%;
+    position: absolute; /* Zie notitie bij 'aanhanger__container:position' */
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 0.3rem white;
+}
+
+.aanhanger__koppeling {
+    width: 4rem;
+    height: 0.5rem;
+    background: black;
+    position: absolute; /* Zie notitie bij 'aanhanger__container:position' */
+    top: 62%;
+    left: 12%;
+}
+
+.card__figure--type-voorrang {
+    width: 35%;
+    height: 35%;
+    background: #eccc00;
+    box-shadow: 0 0 0 0.5rem black,
+                0 0 0 2.0rem white,
+                0 0 0 2.5rem black;
+    transform: rotate(45deg);
 }
 
