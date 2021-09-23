@@ -4,6 +4,10 @@
     box-sizing: border-box; /* Size afmetingen gelden voor de buitenkant */
 }
 
+*:focus {
+    outline: 0.5rem dashed #004896;
+}
+
 html {
     font-size: 62.5%; /* 62.5% van 1rem (16px) = 10px */
 }
@@ -28,7 +32,7 @@ body {
     flex-basis: 30rem; /* vervanging voor 'width' om animatie mogelijk te maken */
     flex-shrink: 0;
     flex-grow: 0;
-    background: #f3f1f5;
+    background: #F3F1F5;
     box-shadow: 0 0.3rem 3rem rgba(0, 0, 0, 0.2);
     list-style: none;
     margin-bottom: 4rem;
@@ -38,6 +42,16 @@ body {
     align-items: center; /* verticaal centreren */
     position: relative;
     transform-style: preserve-3d;
+    transition: 0.5s transform;
+    transition-delay: 0.1s;
+}
+
+.card:hover, .card:focus {
+    transform: rotateY(180deg) translateZ(1px); /* TranslateZ is een iPhonebug fix */
+}
+
+.card:hover .card__informatie, .card:focus .card__informatie {
+    transform: rotateY(-180deg) translateZ(1px); /* TranslateZ is een iPhonebug fix */
 }
 
 .card__figure {
@@ -53,13 +67,14 @@ body {
 .card__informatie {
     width: 100%;
     height: 100%;
-    background: blue;
+    background: #F3F1F5;
     position: absolute;
     top: 0;
     left: 0;
     padding: 4rem;
-    transform: rotateY(30deg);
+    transform: rotateY(180deg);
     z-index: 1; /* Altijd bovenop */
+    backface-visibility: hidden;
 }
 
 .card__heading {
@@ -71,9 +86,9 @@ body {
     height: 60%;
     background: white;
     border-radius: 50%;
-    box-shadow: 0 0 0 2.5rem #c50003,
+    box-shadow: 0 0 0 2.5rem #C50003,
                 0 0 0 3.0rem white,
-                0 0 0 3.5rem #c50003;
+                0 0 0 3.5rem #C50003;
 }
 
 .aanhanger__container {
@@ -116,10 +131,44 @@ body {
 .card__figure--type-voorrang {
     width: 35%;
     height: 35%;
-    background: #eccc00;
+    background: #ECCC00;
     box-shadow: 0 0 0 0.5rem black,
                 0 0 0 2.0rem white,
                 0 0 0 2.5rem black;
     transform: rotate(45deg);
 }
 
+.a-popup {
+    animation-name: popup;
+    animation-duration: 0.4s;
+    animation-timing-function: ease;
+    animation-fill-mode: backwards;
+}
+
+.a-popup:nth-of-type(1) {
+    animation-delay: 0.1s;
+}
+.a-popup:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+.a-popup:nth-of-type(3) {
+    animation-delay: 0.3s;
+}
+.a-popup:nth-of-type(4) {
+    animation-delay: 0.4s;
+}
+.a-popup:nth-of-type(5) {
+    animation-delay: 0.5s;
+}
+
+
+@keyframes popup {
+    from {
+        opacity: 0;
+        transform: scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
